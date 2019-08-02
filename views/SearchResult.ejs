@@ -1,0 +1,25 @@
+<html><head><title>Restaurant</title></head>
+<body><H1>Result</H1>
+<H2>User : <%= name %>  </H2><a href="/logout">Logout</a>
+<H2>Showing <%= rlenth %> document(s)</H2><br>
+<form method="POST" action="/search">
+Search:
+<select name="type">
+                  <option value="name">Name</option>
+                  <option value="borough">Borough</option>
+                  <option value="cuisine">cuisine</option>
+                  <option value="building">Building</option>
+                  <option value="street">Street</option>
+              </select>
+<input type="text" name="search">
+<input type="submit" value="search">
+</form>
+
+
+<ol>
+<% for (var i=0; i<r.length; i++) { %>
+  <li><a href=/display?_id=<%= r[i]._id%>> <%= r[i].name%> </a></li>
+<% } %>
+</ol>
+  <input type ="button" onclick="javascript:location.href='/read'" value="Home"></input>
+</body></html>
